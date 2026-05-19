@@ -10,7 +10,8 @@
     "03": "tsx src/03-agent-loop.ts",
     "04": "tsx src/04-file-agent.ts",
     "05": "tsx src/05-error-recovery.ts",
-    "06": "tsx src/06-bugfix-agent.ts"
+    "06": "tsx src/06-bugfix-agent.ts",
+    "07": "tsx src/07-rag-agent.ts"
   },
   "dependencies": {
     "dotenv": "^17.4.2",
