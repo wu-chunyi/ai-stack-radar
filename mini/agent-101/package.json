@@ -8,7 +8,8 @@
     "01": "tsx src/01-bare-llm.ts",
     "02": "tsx src/02-tool-call.ts",
     "03": "tsx src/03-agent-loop.ts",
-    "04": "tsx src/04-file-agent.ts"
+    "04": "tsx src/04-file-agent.ts",
+    "05": "tsx src/05-error-recovery.ts"
   },
   "dependencies": {
     "dotenv": "^17.4.2",

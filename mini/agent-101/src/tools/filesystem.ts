@@ -7,8 +7,8 @@
  * 2) read_file 有大小上限，防止 LLM 误读大文件把 context 撑爆。
  * 3) grep 用 JS 正则，行号从 1 开始，方便 LLM 直接给用户列出来。
  */
-import { readFileSync, readdirSync, statSync } from "node:fs";
-import { resolve, relative, join } from "node:path";
+import { readFileSync, readdirSync, statSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
+import { resolve, relative, join, dirname } from "node:path";
 
 export const SANDBOX_ROOT = process.cwd();
 
@@ -97,13 +97,37 @@ export const filesystemSchemas = [
       },
     },
   },
+  {
+    type: "function" as const,
+    function: {
+      name: "write_file",
+      description: "将内容写入指定文件（会自动创建中间目录）。如果文件已存在会覆盖。仅限沙盒内。",
+      parameters: {
+        type: "object",
+        properties: {
+          path: { type: "string", description: "文件相对路径" },
+          content: { type: "string", description: "要写入的完整文件内容" },
+        },
+        required: ["path", "content"],
+      },
+    },
+  },
 ];
+
+export function writeFile({ path: p, content }: { path: string; content: string }): string {
+  const abs = safePath(p);
+  const dir = dirname(abs);
+  if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
+  writeFileSync(abs, content, "utf-8");
+  return `已写入 ${content.length} 字符到 ${p}`;
+}
 
 export function runFilesystemTool(name: string, args: unknown): unknown {
   switch (name) {
     case "list_files": return listFiles(args as { dir: string });
     case "read_file": return readFile(args as { path: string });
     case "grep": return grep(args as { pattern: string; path: string });
+    case "write_file": return writeFile(args as { path: string; content: string });
     default: throw new Error(`未知工具: ${name}`);
   }
 }
