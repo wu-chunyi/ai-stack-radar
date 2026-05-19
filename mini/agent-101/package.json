@@ -1,0 +1,22 @@
+{
+  "name": "agent-101",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Learn AI agent loop step by step with DeepSeek",
+  "scripts": {
+    "01": "tsx src/01-bare-llm.ts",
+    "02": "tsx src/02-tool-call.ts",
+    "03": "tsx src/03-agent-loop.ts",
+    "04": "tsx src/04-file-agent.ts"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "openai": "^6.38.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.41",
+    "tsx": "^4.22.2",
+    "typescript": "^5.9.3"
+  }
+}
