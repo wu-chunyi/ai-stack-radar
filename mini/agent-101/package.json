@@ -16,7 +16,8 @@
     "07c": "tsx src/07c-rag-llm-index.ts",
     "07d": "tsx src/07d-rag-embedding-real.ts",
     "08": "tsx src/08-rag-eval.ts",
-    "09": "tsx src/09-rag-optimized.ts"
+    "09": "tsx src/09-rag-optimized.ts",
+    "10": "tsx src/10-scale-test.ts"
   },
   "dependencies": {
     "dotenv": "^17.4.2",
