@@ -12,7 +12,8 @@
     "05": "tsx src/05-error-recovery.ts",
     "06": "tsx src/06-bugfix-agent.ts",
     "07": "tsx src/07-rag-agent.ts",
-    "07b": "tsx src/07b-rag-embedding.ts"
+    "07b": "tsx src/07b-rag-embedding.ts",
+    "07c": "tsx src/07c-rag-llm-index.ts"
   },
   "dependencies": {
     "dotenv": "^17.4.2",

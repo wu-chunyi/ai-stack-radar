@@ -104,12 +104,20 @@ export class TfIdfRetriever {
   private vectors: Map<string, number>[] = [];
   private idfMap: Map<string, number> = new Map();
 
-  /** 索引：加载所有文档切块 */
+  /** 索引：从文件路径加载 */
   index(filePaths: string[]) {
-    for (const fp of filePaths) {
-      this.chunks.push(...chunkMarkdown(fp));
-    }
-    const corpus = this.chunks.map((c) => tokenize(c.text));
+    for (const fp of filePaths) this.chunks.push(...chunkMarkdown(fp));
+    return this._buildVectors();
+  }
+
+  /** 索引：从已有 chunk 数组加载（支持增强文本） */
+  indexChunks(chunks: Chunk[], augmentedTexts?: string[]) {
+    this.chunks = chunks;
+    return this._buildVectors(augmentedTexts);
+  }
+
+  private _buildVectors(textOverrides?: string[]) {
+    const corpus = this.chunks.map((c, i) => tokenize(textOverrides?.[i] ?? c.text));
     this.idfMap = idf(corpus);
     this.vectors = corpus.map((tokens) => {
       const tfMap = tf(tokens);
