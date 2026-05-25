@@ -5,6 +5,9 @@
   "type": "module",
   "description": "Learn AI agent loop step by step with DeepSeek",
   "scripts": {
+    "10": "tsx src/10-scale-test.ts",
+    "mcp": "tsx src/mcp-server.ts",
+    "mcp:test": "tsx src/mcp-client-test.ts",
     "01": "tsx src/01-bare-llm.ts",
     "02": "tsx src/02-tool-call.ts",
     "03": "tsx src/03-agent-loop.ts",
@@ -16,10 +19,10 @@
     "07c": "tsx src/07c-rag-llm-index.ts",
     "07d": "tsx src/07d-rag-embedding-real.ts",
     "08": "tsx src/08-rag-eval.ts",
-    "09": "tsx src/09-rag-optimized.ts",
-    "10": "tsx src/10-scale-test.ts"
+    "09": "tsx src/09-rag-optimized.ts"
   },
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
     "dotenv": "^17.4.2",
     "openai": "^6.38.0"
   },

@@ -1,0 +1,20 @@
+{
+  "_readme": "把这份配置合并到 ~/Library/Application Support/Claude/claude_desktop_config.json 里",
+  "_step1": "如果文件不存在，直接把 mcpServers 这段复制进去",
+  "_step2": "如果文件已存在，把 mcpServers.agent-101-tools 这个 key 加进去",
+  "_step3": "重启 Claude Desktop，左下角看到锤子图标 🔨 = MCP 连上了",
+
+  "mcpServers": {
+    "agent-101-tools": {
+      "command": "/usr/local/bin/npx",
+      "args": [
+        "tsx",
+        "/Users/uw/Desktop/project/常用/0811/ai-stack-radar/mini/agent-101/src/mcp-server.ts"
+      ],
+      "env": {
+        "_note": "如果工具需要 API key 可以加在这里",
+        "NODE_ENV": "development"
+      }
+    }
+  }
+}
