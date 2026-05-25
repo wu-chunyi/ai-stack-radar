@@ -8,6 +8,7 @@
     "10": "tsx src/10-scale-test.ts",
     "mcp": "tsx src/mcp-server.ts",
     "mcp:test": "tsx src/mcp-client-test.ts",
+    "mcp:radar": "tsx src/ai-stack-radar-mcp.ts",
     "01": "tsx src/01-bare-llm.ts",
     "02": "tsx src/02-tool-call.ts",
     "03": "tsx src/03-agent-loop.ts",
