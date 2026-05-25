@@ -14,7 +14,8 @@
     "07": "tsx src/07-rag-agent.ts",
     "07b": "tsx src/07b-rag-embedding.ts",
     "07c": "tsx src/07c-rag-llm-index.ts",
-    "07d": "tsx src/07d-rag-embedding-real.ts"
+    "07d": "tsx src/07d-rag-embedding-real.ts",
+    "08": "tsx src/08-rag-eval.ts"
   },
   "dependencies": {
     "dotenv": "^17.4.2",
