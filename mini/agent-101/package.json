@@ -11,6 +11,7 @@
     "mcp:radar": "tsx src/ai-stack-radar-mcp.ts",
     "11": "tsx src/11-vectordb-demo.ts",
     "12": "tsx src/12-multi-agent.ts",
+    "12b": "tsx src/12b-pipeline-agent.ts",
     "01": "tsx src/01-bare-llm.ts",
     "02": "tsx src/02-tool-call.ts",
     "03": "tsx src/03-agent-loop.ts",
